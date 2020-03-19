@@ -21,7 +21,6 @@
 #import "NSString+Category.h"
 
 #import "UserInfoSaveManager.h"
-#import "DeviceManager.h"
 #import "Localizable.h"
 
 #import "UITableView+NoData.h"
