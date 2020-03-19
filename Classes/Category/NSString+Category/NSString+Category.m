@@ -1,15 +1,25 @@
 //
-//  XHStringOperation.m
-//  YioksQRCode
+//  NSString+Category.m
+//  YioksNike
 //
-//  Created by PingXuhui on 16/1/19.
-//  Copyright © 2016年 Yioks. All rights reserved.
+//  Created by PingXuhui on 2019/3/20.
+//  Copyright © 2019 Ping. All rights reserved.
 //
 
-#import "XHStringOperation.h"
+#import "NSString+Category.h"
+
+@implementation NSString (Category)
 
 
-@implementation XHStringOperation
+- (CGSize)boundingSize:(CGSize)viewSize textFont:(UIFont *)font {
+    // MARK:  动态获取宽高
+    CGSize size = [self boundingRectWithSize:viewSize
+                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                  attributes:@{NSFontAttributeName: font}
+                                     context:nil].size;
+    return size;
+    
+}
 
 /**
  非空检测
@@ -68,17 +78,8 @@
     return result;
 }
 
-
-+ (NSString *)getTimestamp
-{
-    // 把时间转为时间戳
-    NSDate *localDate = [NSDate date]; //当前时间
-    NSString *timeSp = [NSString stringWithFormat:@"%ld",(long)[localDate timeIntervalSince1970]];  // 转为 UNIX 时间戳
-    return timeSp;
-}
-
 // MARK: 将NSDate类型的时间转换为时间戳,从1970/1/1开始
-+ (NSString *)getDateTimeTOMilliSeconds:(NSDate *)datetime{
++ (NSString *)getTiemstampForDateTime:(NSDate *)datetime {
     NSTimeInterval interval = [datetime timeIntervalSince1970];
     NSLog(@"转换的时间戳=%f",interval);
     long long totalMilliseconds = interval * 1000 ;
@@ -105,7 +106,7 @@
  @param stamp 时间戳
  @return 返回格式化后的时间
  */
-+ (NSString *)formatterTime:(NSString *)format stampString:(NSString *)stamp {
++ (NSString *)formatter:(NSString *)format stampString:(NSString *)stamp {
     NSTimeInterval interval;
     if (stamp.length == 13) {
         interval = [stamp doubleValue] / 1000.0;
@@ -125,7 +126,7 @@
 /**
  *  将阿拉伯数字转换为中文数字
  */
-+(NSString *)translationArabicNum:(NSInteger)arabicNum
++ (NSString *)translationArabicNum:(NSInteger)arabicNum
 {
     NSString *arabicNumStr = [NSString stringWithFormat:@"%ld",(long)arabicNum];
     NSArray *arabicNumeralsArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0"];
