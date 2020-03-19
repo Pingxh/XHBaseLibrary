@@ -28,7 +28,7 @@
  @return 检测结果
  */
 + (BOOL) isNotBlankString:(NSString *)string{
-    return ![XHStringOperation isBlankString:string];
+    return ![self isBlankString:string];
 }
 
 + (BOOL) isBlankString:(NSString *)string {
