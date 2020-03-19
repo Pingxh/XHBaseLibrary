@@ -77,6 +77,7 @@
 		1854D5D3242362BB00E6BA84 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
 		1854D5D5242362BB00E6BA84 /* UserInfoSaveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoSaveManager.h; sourceTree = "<group>"; };
 		1854D5D6242362BB00E6BA84 /* UserInfoSaveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoSaveManager.m; sourceTree = "<group>"; };
+		1854D6372423843E00E6BA84 /* XHBaseLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHBaseLibrary.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +132,7 @@
 				1854D5A6242362BB00E6BA84 /* Category */,
 				1854D5CF242362BB00E6BA84 /* Localizeable */,
 				1854D5D4242362BB00E6BA84 /* UserData */,
+				1854D6372423843E00E6BA84 /* XHBaseLibrary.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
